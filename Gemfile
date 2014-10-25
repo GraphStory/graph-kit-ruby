@@ -53,5 +53,7 @@ gem 'spree_auth_devise', :git => 'https://github.com/spree/spree_auth_devise.git
 ############################################################
 
 group :development, :test do
+  gem 'active_record_sampler_platter', '~> 0.1.0'
+  gem 'factory_girl_rails', '~> 4.5.0'
   gem 'jazz_hands', github: 'scarfacedeb/jazz_hands' # Pry + extensions, awesomeprint, etc
 end

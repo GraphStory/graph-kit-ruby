@@ -10,4 +10,4 @@
 Spree::Core::Engine.load_seed if defined?(Spree::Core)
 Spree::Auth::Engine.load_seed if defined?(Spree::Auth)
 
-Spree::Sample.load_sample('fake_products')
+Spree::Sample.load_sample 'fake_orders'
