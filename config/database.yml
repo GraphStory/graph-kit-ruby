@@ -1,25 +1,33 @@
-# SQLite version 3.x
-#   gem install sqlite3
-#
-#   Ensure the SQLite 3 gem is defined in your Gemfile
-#   gem 'sqlite3'
-#
-default: &default
-  adapter: sqlite3
-  pool: 5
-  timeout: 5000
+# PG setup:
+#  createuser graph_kit_ruby --createdb
+#  rake db:create db:migrate db:seed
+#  env RAILS_ENV=test rake db:create db:migrate db:seed
+
+#____________________________________________________________
+# common
+#____________________________________________________________
+
+pg: &pg
+  adapter:    postgresql
+  encoding:   utf8
+  template:   template0
+  port:       5432
+  pool:       25
+
+#____________________________________________________________
+# environments
+#____________________________________________________________
 
 development:
-  <<: *default
-  database: db/development.sqlite3
+  <<: *pg
+  host:         127.0.0.1
+  username:     graph_kit_ruby
+  password:     graph_kit_ruby
+  database:     graph_kit_ruby_development
 
-# Warning: The database defined as "test" will be erased and
-# re-generated from your development database when you run "rake".
-# Do not set this db to the same as development or production.
-test:
-  <<: *default
-  database: db/test.sqlite3
-
-production:
-  <<: *default
-  database: db/production.sqlite3
+test: &test
+  <<: *pg
+  host:         127.0.0.1
+  username:     graph_kit_ruby
+  password:     graph_kit_ruby
+  database:     graph_kit_ruby_test

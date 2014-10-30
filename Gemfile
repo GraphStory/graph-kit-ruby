@@ -9,8 +9,7 @@ gem 'rails', '4.1.6'
 # Data stores
 ############################################################
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'pg', '~> 0.17.1'
 
 # neo4j is an AR-inspired 'OGM'
 gem 'neo4j', '~> 3.0.2'
