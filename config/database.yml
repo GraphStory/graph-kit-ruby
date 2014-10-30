@@ -31,3 +31,10 @@ test: &test
   username:     graph_kit_ruby
   password:     graph_kit_ruby
   database:     graph_kit_ruby_test
+
+production: &production
+  <<: *pg
+  host:         127.0.0.1
+  username:     graph_kit_ruby
+  password:     graph_kit_ruby
+  database:     graph_kit_ruby_production
