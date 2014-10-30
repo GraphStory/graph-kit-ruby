@@ -58,4 +58,7 @@ group :development, :test do
   gem 'active_record_sampler_platter', '~> 0.1.0'
   gem 'factory_girl_rails', '~> 4.5.0'
   gem 'jazz_hands', github: 'scarfacedeb/jazz_hands' # Pry + extensions, awesomeprint, etc
+
+  gem 'shoulda-matchers', '~> 2.7.0'
+  gem 'rspec-rails', '~> 3.1.0'
 end
