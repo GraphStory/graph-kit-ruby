@@ -40,6 +40,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
+# EY doesn't like env vars so we'll put em in env.custom
+ gem 'dotenv', '~> 1.0.2'
 
 ############################################################
 # Spree and extensions

@@ -4,4 +4,8 @@ uri        = URI.parse(neo4j_url)
 
 server_uri = "#{uri.scheme}://#{uri.host}:#{uri.port}"
 
-Neo4j::Session.open(:server_db, server_uri, basic_auth: { username: uri.user, password: uri.password})
+begin
+  Neo4j::Session.open(:server_db, server_uri, basic_auth: { username: uri.user, password: uri.password})
+rescue Net::HTTP::Persistent::Error => err
+  Rails.logger.error "Neo4j connecton problem: #{err.message}"
+end

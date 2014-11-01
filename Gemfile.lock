@@ -127,6 +127,7 @@ GEM
       devise (>= 2.1.0)
     diff-lcs (1.2.5)
     diffy (3.0.7)
+    dotenv (1.0.2)
     erubis (2.7.0)
     execjs (2.2.2)
     factory_girl (4.5.0)
@@ -387,6 +388,7 @@ PLATFORMS
 DEPENDENCIES
   active_record_sampler_platter (~> 0.1.0)
   coffee-rails (~> 4.0.0)
+  dotenv (~> 1.0.2)
   factory_girl_rails (~> 4.5.0)
   jazz_hands!
   jbuilder (~> 2.0)
