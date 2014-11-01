@@ -41,7 +41,11 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 # EY doesn't like env vars so we'll put em in env.custom
- gem 'dotenv', '~> 1.0.2'
+gem 'dotenv', '~> 1.0.2'
+
+# usually these are for dev/test but i'm gonna try using them for sample data too
+gem 'factory_girl_rails', '~> 4.5.0'
+gem 'active_record_sampler_platter', '~> 0.1.0'
 
 ############################################################
 # Spree and extensions
@@ -57,8 +61,6 @@ gem 'spree_auth_devise', :git => 'https://github.com/spree/spree_auth_devise.git
 ############################################################
 
 group :development, :test do
-  gem 'active_record_sampler_platter', '~> 0.1.0'
-  gem 'factory_girl_rails', '~> 4.5.0'
   gem 'jazz_hands', github: 'scarfacedeb/jazz_hands' # Pry + extensions, awesomeprint, etc
 
   gem 'shoulda-matchers', '~> 2.7.0'
