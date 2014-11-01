@@ -11,6 +11,8 @@ Spree.config do |config|
   # config.track_inventory_levels = false
   config.allow_ssl_in_staging    = false
   config.allow_ssl_in_production = false # not necessary for this demo
+
+  config.allow_guest_checkout    = false # recommendations are more fun with users involved
 end
 
 Spree.user_class = "Spree::User"
