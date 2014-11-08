@@ -11,10 +11,11 @@ module Recs
       Spree::Product.find_by!(slug: slug)
     end
 
-    def users_also_bought
+    def users_also_bought(limit: 3)
       query_as(:product).
         match("product<--(user:`Recs::User`)-->(other_product:`Recs::Product`)").
         where('other_product.slug <> product.slug').
+        limit(limit).
         pluck('DISTINCT other_product')
     end
 

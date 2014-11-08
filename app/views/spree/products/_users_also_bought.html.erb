@@ -1,0 +1,6 @@
+<% if (products = product.users_also_bought).any? %>
+  <div class='users-also-bought'>
+      <h3>Users also bought:</h3>
+      <%= render partial: 'spree/shared/products', locals: { products: products } %>
+  </div>
+<% end %>

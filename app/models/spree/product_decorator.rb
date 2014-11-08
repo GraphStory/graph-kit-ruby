@@ -1,6 +1,6 @@
 Spree::Product.class_eval do
   def users_also_bought
-    graphed.users_also_bought.map(&:in_spree)
+    graphed.users_also_bought(limit: 3).map(&:in_spree)
   end
 
   def graphed
