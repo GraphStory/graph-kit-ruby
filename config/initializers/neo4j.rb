@@ -1,4 +1,8 @@
-neo4j_url = ENV.fetch('NEO4J_URI', 'http://localhost:7474')
+if Rails.env.production?
+  neo4j_url = ENV.fetch('NEO4J_URI', 'http://localhost:7474')
+else
+  neo4j_url = 'http://localhost:7474'
+end
 
 uri        = URI.parse(neo4j_url)
 
