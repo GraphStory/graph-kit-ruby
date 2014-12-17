@@ -4,7 +4,7 @@ module Recs
 
     property :email
 
-    has_many :out, :purchases, model_class: Recs::Product
+    has_many :out, :purchases, type: :purchased, model_class: Recs::Product
 
     def in_spree
       Spree::User.find_by!(email: email)
