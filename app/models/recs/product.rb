@@ -12,9 +12,7 @@ module Recs
     end
 
     def users_also_bought(limit: 3)
-      query_as(:product).
-        match("product<--(user:`Recs::User`)-->(other_product:`Recs::Product`)").
-        where('other_product.slug <> product.slug').
+      users.purchases(:other_product).where("other_product.slug <> product.slug").
         limit(limit).
         pluck('DISTINCT other_product')
     end
